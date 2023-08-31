@@ -39,7 +39,7 @@ export const getAllPokemons = async () => {
 
     export const getPokemonsByUrl = async (pokemonUrl) =>{
     const { data } = await axios.get(pokemonUrl)
-    console.log(data)
+   
     const pokemon = {
         id: data.id,
         name: data.name,

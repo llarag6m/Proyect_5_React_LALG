@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { getPokemonById } from "../services/pokemon"
 import StatBartList from "../components/pokemonDetail/StatBartList"
 import { bgStylePokemonType } from "../shared/pokemon"
+import Movements from "../components/pokedex/movements"
 
 
 const PokemonDetail = () => {
@@ -13,17 +14,15 @@ const PokemonDetail = () => {
   useEffect(() => {
       getPokemonById(pokemonId)
       .then((data) =>  setPokemonData(data))
-      
       .catch((err) => console.log(err))
      
   }, [])
   
 
-
   return (
     
     <main className="flex justify-center items-center bg-blue-500">
-        <article className=" w-[min(100%,_500px)] shadow-xl shadow-black m-5 bg-gray-200">
+        <article className=" w-[min(100%,_700px)] shadow-xl shadow-black m-5 bg-gray-200">
           <header className="h-[120px]">
             <div className={`-bottom-4 h-[90px]  ${bgStylePokemonType[pokemonData?.types[0]]} shadow-xl shadow-gra`}>
               <img className="h-[170%] w-full object-contain " src={pokemonData?.image} alt="" />
@@ -46,6 +45,8 @@ const PokemonDetail = () => {
             </div>
           </section>
           <StatBartList stats = {pokemonData?.stats} />
+          <hr />
+          <Movements moves = {pokemonData?.moves}/>
         </article>
     </main>
   )
