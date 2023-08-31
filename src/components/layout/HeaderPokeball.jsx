@@ -1,6 +1,5 @@
 import { useDispatch } from "react-redux"
 import { logout } from "../../store/slices/trainer.slice"
-import { GoSignIn } from "react-icons/go";
 
 const HeaderPokeball = ({children}) => {
   const dispach = useDispatch()

@@ -19,7 +19,7 @@ const PokemonDetail = () => {
   }, [])
   
 
-console.log(pokemonData)
+
   return (
     
     <main className="flex justify-center items-center bg-blue-500">

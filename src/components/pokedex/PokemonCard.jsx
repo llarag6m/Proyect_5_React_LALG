@@ -7,12 +7,7 @@ import { Link } from "react-router-dom"
 
 const PokemonCard = ({pokemonUrl}) => {
   const [pokemonInfo, setPokemonInfo] = useState(null)
-{/*
-  const bgStylePokemonType = {
-    "grass": "bg-gradient-to-b from-green-500 to-green-300",
-    "fire": "bg-gradient-to-b from-orange-500 to-orange-300",
-  }
-*/}
+
   const joinPokemonTypes = (types = []) => {
     return types.slice(0, 2).join(" / ")
   }
@@ -23,7 +18,7 @@ const PokemonCard = ({pokemonUrl}) => {
       .catch((err) => console.log(err))
     }, [])
     
-//coregir poner un link
+
   return (
     <Link to={`/pokedex/${pokemonInfo?.id}`} className={`text-center capitalize border-[4px] rounded-md bg-white transition duration-300 ease-in-out hover:scale-110 shadow-lg shadow-black ${borderStylePokemonType[pokemonInfo?.types[0]]}`}>
       <header className={`h-[80px]  relative mb-8 ${bgStylePokemonType[pokemonInfo?.types[0]]}`}>
